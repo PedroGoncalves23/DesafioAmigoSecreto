@@ -6,15 +6,11 @@ $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 switch($url) {
     case '/':
-        echo "Página inicial";
+        PessoaController::index();
     break;
 
     case '/cadastro':
         PessoaController::edit();
-    break;
-
-    case '/index':
-        PessoaController::index();
     break;
 
     case '/cadastro/save':
@@ -32,6 +28,11 @@ switch($url) {
     case '/listarpessoas/delete':
         PessoaController::delete();
     break;
+
+    default:
+        PessoaController::error404();
+    break;
+
 }
 
 

@@ -12,23 +12,19 @@ Um projeto em PHP utilizando o padrão MVC, onde contém:
 
 ### 📋 Pré-requisitos
 
-De que coisas você precisa para instalar o software e como instalá-lo?
-
 ```
 Xampp ou qualquer outro gerenciador MySql
 ```
 
 ### 🔧 Inicialização projeto:
 
-Uma série de exemplos passo-a-passo que informam o que você deve executar para ter um ambiente de desenvolvimento em execução.
-
-Diga como essa etapa será:
+Siga os passos:
 
 ```
-Abra o arquivo database e altere a função __construct() para os dados do seu localhost
-Dentro da pasta terá um arquivo sql com as tabelas prontas, basta inserir no seu banco
+Abra o arquivo database e altere a função __construct() para os dados do seu localhost;
+Dentro da pasta terá um arquivo sql (desafio.sql) com as tabelas prontas, basta inserir no seu banco;
 
-Após fazer as devidas alterações, inicie o xampp startando o MySql e Apache (Caso utilize ele para o banco)
+Após fazer as devidas alterações, inicie o xampp startando o MySql e Apache (Caso utilize ele para o banco);
 
 Após Xampp startando abra o projeto e de um:
 php -S localhost:8000   
@@ -45,3 +41,18 @@ GERAR PDF = http://localhost:8000/gerarPDF
 
 
 ```
+
+###  Desafios enfretados e funcionalidades adicionais:
+    A parte do gerar as combinações dos nomes puxando do banco de dados foi um desafio para mim,
+    levei um tempo para chegar ao código atual mas deu super certo. Mas neste teste consegui,
+    desenvolver mais a prática do modelo MVC e também a lógica.
+
+    Fiz um gerador de PDF, onde o usuário na página de sorteio pode clicar no botão pata baixar,
+    esse PDF tem os nomes que saíram no sorteio do amigo secreto.
+
+
+ ###  Prints de como está cada página:
+    Dentro da pasta IMG terá um print com cada página e sua exibição;
+
+
+

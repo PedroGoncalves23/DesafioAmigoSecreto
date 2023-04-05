@@ -5,6 +5,10 @@ class PessoaController{
         include 'View/index.php';
     }
 
+    public static function sorteio(){
+        include 'teste.php';
+    }
+
     public static function save()
     {
         include 'Model/PessoaModel.php';
@@ -15,6 +19,9 @@ class PessoaController{
         $model->email = $_POST['email'];
 
         $model->save();
+
+        
+
     }
 
     public static function listar()
@@ -38,6 +45,35 @@ class PessoaController{
             $model = $model->getById((int)$_GET['id']); 
 
         }
-        include 'View/index.php';
+        include 'View/cadastroPessoa.php';
     }
+
+    public static function sorteioo()
+    {
+        include 'Model/PessoaModel.php';
+
+        $model= new PessoaModel();
+
+
+        $model->sorteio();
+    
+
+        require_once('View/sorteio.php');
+
+
+    }
+
+    public static function delete()
+    {
+        include 'Model/PessoaModel.php';
+
+        $model= new PessoaModel();
+        $model->delete((int) $_GET['id']);
+
+        header("Location: /listarpessoas");
+
+
+    }
+
+   
 }

@@ -19,7 +19,7 @@
             $stmt->bindValue(2, $model->email);
 
             $stmt->execute();
-        }
+            }
 
         public function select()
         {   
@@ -68,5 +68,27 @@
             $stmt->execute();
     
             return $stmt->fetchObject("PessoaModel"); // Retornando um objeto específico PessoaModel
+        }
+
+        public function sorteio()
+        {
+
+            $sql = "SELECT nome FROM pessoa";
+            $stmt = $this->conexao->prepare($sql);
+
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        }
+
+        public function delete(int $id) {
+            $sql = "DELETE FROM pessoa WHERE id = ? ";
+            $stmt = $this->conexao->prepare($sql);
+
+            $stmt->bindValue(1, $id);
+            $stmt->execute();
+
+
+            
         }
     }

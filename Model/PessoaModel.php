@@ -11,22 +11,19 @@ class PessoaModel
         include 'database.php';
 
         $dt = new database();
-
-        if(empty($this->id)) {
-            $dt->insert($this);
-
-            //APÓS CLICAR NO BOTÃO SALVAR ELE REDIRECIONA PARA A PÁGINA DE LISTAGEM
-            echo "<script>alert('Registro incluído com sucesso!');document.location='/listarpessoas'</script>";
-            
-        }else{
-            $dt->edit($this);
-
-            //APÓS CLICAR NO BOTÃO SALVAR ELE REDIRECIONA PARA A PÁGINA DE LISTAGEM
-            echo "<script>alert('Registro editado com sucesso!');document.location='/listarpessoas'</script>";
-
-            
-        }
-
+    
+            if(empty($this->id)) {
+                $dt->insert($this);
+    
+                //APÓS CLICAR NO BOTÃO SALVAR ELE REDIRECIONA PARA A PÁGINA DE LISTAGEM
+                echo "<script>alert('Registro incluído com sucesso!');document.location='/listarpessoas'</script>";
+                
+            }else{
+                $dt->edit($this);
+    
+                //APÓS CLICAR NO BOTÃO SALVAR ELE REDIRECIONA PARA A PÁGINA DE LISTAGEM
+                echo "<script>alert('Registro editado com sucesso!');document.location='/listarpessoas'</script>";
+            } 
     }
 
     public function getAllRows()
@@ -62,5 +59,23 @@ class PessoaModel
         } else {
             return new PessoaModel();
         }
+    }
+
+    public function sorteio()
+    {
+        include 'database.php';
+
+        $dt = new database();
+
+        $this->rows = $dt->sorteio();
+    }
+
+    public function delete(int $id)
+    {
+        include 'database.php';
+
+        $dt = new database();
+
+        $dt->delete($id);
     }
 }

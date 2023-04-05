@@ -9,7 +9,7 @@ switch($url) {
         echo "Página inicial";
     break;
 
-    case '/pessoa':
+    case '/cadastro':
         PessoaController::edit();
     break;
 
@@ -17,12 +17,20 @@ switch($url) {
         PessoaController::index();
     break;
 
-    case '/pessoa/save':
+    case '/cadastro/save':
         PessoaController::save();
     break;
 
     case '/listarpessoas':
         PessoaController::listar();
+    break;
+
+    case '/sorteio':
+        PessoaController::sorteioo();
+    break;
+
+    case '/listarpessoas/delete':
+        PessoaController::delete();
     break;
 }
 

@@ -22,10 +22,12 @@ foreach ((array)$model->rows as $user) {
 <div class="container">
         <div class="row">
             <div class="col mt-5">
-
                 <h1 class="mb-3 row d-flex justify-content-center">Sorteio amigo secreto</h1>
                 <div class="mb-3 row d-flex justify-content-center">
                 <a class='btn btn-info' href='/sorteio' >Refazer</a>
+                <div class="mb-3 text-center" style='padding-top: 15px'>
+            <a class='btn btn-info' href='/gerarPDF' role='button'>Baixar PDF com sorteio aleatorio</a>
+        </div>
 
                </div>
                     <div class="mb-3">
@@ -41,6 +43,4 @@ foreach ((array)$model->rows as $user) {
             </div>
         </div>
 </div>
-
-
 

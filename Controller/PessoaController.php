@@ -6,6 +6,14 @@ class PessoaController{
 
     }
 
+    public static function pdf(){
+        include 'Model/PessoaModel.php';
+        $model= new PessoaModel();
+
+        $model->sorteio();
+        require_once('View/gerarPDF.php');
+    }
+
     public static function error404(){
         require_once('View/error404.php');
 
@@ -56,6 +64,7 @@ class PessoaController{
 
         $model->sorteio();
         require_once('View/sorteio.php');
+        
     }
 
     // FUNÇÃO DELETA USUÁRIO

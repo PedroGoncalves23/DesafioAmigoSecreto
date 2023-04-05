@@ -29,6 +29,12 @@ switch($url) {
         PessoaController::delete();
     break;
 
+    case '/gerarPDF':
+        PessoaController::pdf();
+    break;
+
+    
+
     default:
         PessoaController::error404();
     break;
